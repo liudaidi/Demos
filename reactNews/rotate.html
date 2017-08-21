@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+ 	<style>
+ 		*{
+ 			margin: 0;
+ 			padding: 0;
+ 		}
+		 body,html{
+				width:100% ;
+				height: 100%;
+				background:#334356;
+		 }
+		 #root{
+			float: right;
+			margin-right: 10px;
+			 width: 25%;
+			 height: 100%;
+			 color: #fff;
+		 }
+		.wrap{
+			margin-right:10px;
+			position: relative;
+			width: 100%;
+			height: 150px;
+			margin-top:10px;
+			font-size: 12px;
+			border:1px solid #999;
+		}
+		.wrap p{
+				/* position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				background: rgba(32,30,30,0.8);
+				padding-top: 20px;
+				box-sizing: border-box;
+				transition: transform 1s; */
+		}
+		.active{
+			transform:rotateX(180deg);
+			backface-visibility:hidden;
+		} 
+ 		
+ 	</style>
+</head>
+<body>
+
+<div id="root"></div>
+
+<script src="libs/jquery-3.2.1.min.js"></script>
+<script src="libs/react.min.js"></script>
+<script src="libs/react-dom.min.js"></script>
+<script src="libs/babel.min.js"></script>
+<script type="text/babel">
+//每一个新闻条的子组件
+	class NewsItem extends React.Component{
+		constructor(props){
+			super(props);
+			this.state={
+				flag:false
+			}
+			this.styleObj={
+				position: 'absolute',
+				top: 0,
+				left: 0,
+				width: '100%',
+				height: '100%',
+				background:'rgba(10,88,139,1)',
+				paddingTop: '20px',
+				boxSizing: 'border-box',
+				transition: 'transform 1s',
+			}
+			this.ratate=this.rotate.bind(this);
+		}
+		rotate(){
+			this.setState({
+				flag:!this.state.flag
+			})
+		}
+		componentWillMount(){
+			console.log(this.props.data);
+		}
+		componentDidMount(){
+			setTimeout(()=>{
+				this.rotate()
+			},3000)
+			console.log(this.props.num)
+			this.oldnum=this.props.num
+		}
+		componentWillUpdate(){
+			if(this.props.num!=this.oldnum){
+				console.log('checked')
+				//this.rotate()
+			}
+		}
+		render(){
+			let data=this.props.data;
+			function info(){
+				return{
+					__html:data[0].titleZh
+				}
+			}
+			function info2(){
+				return{
+					__html:data[1].titleZh
+				}
+			}
+			return(
+				<div className='wrap'>
+					<p onTransitionEnd={this.props.add} className={this.state.flag?'active':''} style={this.styleObj}>
+						<span className='title' dangerouslySetInnerHTML={info()}></span>
+						<span className='detail'>{data[0].abstractZh}</span>
+					</p>
+					<p className={this.state.flag?'':'active'} style={this.styleObj}>
+						<span className='title' dangerouslySetInnerHTML={info2()}></span>
+						<span className='detail'>{data[1].abstractZh}</span>
+					</p>
+				</div>
+			)
+		}
+	}
+	//所有新闻的容器组建
+	class Wrap extends React.Component{
+		constructor(props){
+			super(props)
+			this.state={
+				num:1
+			}
+			this.handleNum=this.handleNum.bind(this);
+
+		}
+		handleNum(){
+			this.setState({
+				num:this.state.num+=1
+			})
+		}
+
+		componentDidUpdate(){
+			console.log(this.state.num)
+		}
+		render(){
+			let num=this.state.num;
+			let list=this.props.list;
+			let arr=[];
+			for(var i=0;i<list.length;i+=2){
+				let tmp=[];
+				tmp[0]=list[i];
+				tmp[1]=list[i+1]
+				arr.push(<NewsItem key={i} data={tmp} add={this.handleNum} num={num}/>)
+			}
+			return (
+				<div>{arr}</div>
+			)
+		}
+	}
+	
+
+	$.ajax('data/data.json').then(function(data){
+		ReactDOM.render(
+			<Wrap list={data.resultList}/>,
+			document.getElementById('root')
+		)
+	})
+</script>
+</body>
+</html>
