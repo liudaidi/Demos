@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        .box{
+            border:5px solid #ccc;
+        }
+    </style>
+</head>
+<body>
+    <canvas class='box' width='500' height='600'></canvas>
+    <script>
+    var box=document.querySelector('.box');
+    var api=box.getContext('2d');  
+    var text='hello world!';
+    var w=api.measureText(text).width;//获取文字宽度
+
+    var gradient=api.createLinearGradient(250-w/2,0,250+w/2,0);//文字现行渐变  (xstart,ystart,xend,yend)
+    gradient.addColorStop(0,'blue');
+    gradient.addColorStop('0.5','pink');
+    gradient.addColorStop('1','yellow');
+    api.fillStyle=gradient;
+    
+    api.font='24px Arial';//设置字体样式
+    api.textBaseLine='center';
+    api.textAlign='center';
+    api.fillText(text,250,300);
+    //
+    </script>
+</body>
+</html>

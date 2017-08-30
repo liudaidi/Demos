@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <canvas class='box' width='1500' height='500'></canvas>
+
+    <script>
+
+    var box=document.querySelector('.box');
+    var api=box.getContext('2d');
+    var data=[
+        {
+            num:60,
+            col:'red'
+        },
+        {
+            num:90,
+            col:'yellow'
+        },
+        {
+            num:110,
+            col:'blue'
+        },
+        {
+            num:50,
+            col:'pink'
+        },{
+            num:30,
+            col:'orange'
+        }
+    ]
+
+    var deg=Math.PI/180;
+    var index=0;
+    function drow(col,start,end,callback){
+        function aa(){
+            api.beginPath();
+            index++;
+            api.moveTo(500,300);
+            api.arc(500,300,100,start*deg,(start+index)*deg);
+            api.closePath();          
+            api.fillStyle=col;
+            api.fill();
+            if(index<=(end-start)){
+                requestAnimationFrame(aa)
+            }else{
+                callback()
+            }
+        }
+           requestAnimationFrame(aa)
+           return end;
+    }
+    /* var sum=340,
+       prev=0;
+       data.forEach((val)=>{      
+            prev=drow(val.col,prev,prev+val.num/sum*360);
+            console.log(prev)
+
+       })*/
+
+        drow('pink',0,80,function (){
+            drow('yellow',80,110,function (){
+                drow('blue',110,140,function (){
+                    drow('orange',140,210,function (){
+                         drow('#f00',210,360,function (){
+                            
+                        })
+                    }) 
+                })
+            })
+        });
+    </script>
+</body>
+</html>

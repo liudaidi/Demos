@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>制作一个小球弹跳的动画</title>
+    <style type="text/css">
+        canvas{
+            border:1px solid #000;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <canvas id="canvas1" width="500" height="400"></canvas>
+    </div>
+
+    <script>
+        //获取元素
+        function drawqiu(id) {           
+            var canvas = document.getElementById(id);
+            if (canvas == null){
+                return false
+        };
+
+        var context = canvas.getContext("2d");        
+        setInterval(function () {
+            move(context)},1);
+        }
+        var x = 100;//x和y轴的坐标
+        var y = 100;
+   
+        var xlen = 2;//每次x轴移动的长度
+        var ylen = 2;//每次y轴移动的长度
+        var radius = 20;//圆形的半径
+        function move(context) {
+            context.fillStyle = "#fff";
+            context.fillRect(0, 0, 500, 500);//清除画布
+            context.beginPath();
+            context.fillStyle = "pink";
+            context.arc(x,y,radius,0,Math.PI*2);
+            context.closePath();
+            context.fill();
+            //判断移动的方向
+            if(x+radius>=500){//到达最右边              
+                xlen = -2;
+            }
+            if(x<=radius){//到达最左边           
+                xlen = 2;
+            }
+            if(y+radius>=400){//到达最下边              
+                ylen = -2;
+            }
+            if(y <= radius){              
+                ylen = 2;
+            }
+            x= x+xlen;
+            y = y+ylen;
+    }
+    drawqiu("canvas1");
+        </script>
+</body>
+</html>
+
+
