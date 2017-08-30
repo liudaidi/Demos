@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        *{
+            margin:0;padding: 0;
+        }
+        .ball{
+            border:1px solid #00f;
+            display: block;
+            margin:0 auto;
+        }
+    </style>
+</head>
+<body>
+    <canvas class='ball' width='600' height='600'></canvas>
+    <script>
+        var box=document.querySelector('.ball');
+        var api=box.getContext('2d');
+        var deg=Math.PI/180;
+        function random(min,max){
+            return Math.floor(Math.random()*(max-min+1)+min);
+        }
+        //构造函数      保存this指针  .bind(this)
+        function Ball(x,y,r,speedx,speedy){
+            this.x=x;
+            this.y=y;
+            this.r=r;
+            this.speedx=speedx;
+            this.speedy=speedy;
+            this.move();
+        }
+        Ball.prototype={    
+            createColor:function (){//设置球的渐变
+                var gdt=api.createLinearGradient(this.x-this.r,this.y-this.r,this.x+this.r,this.y-this.r);    
+                gdt.addColorStop(0,'blue'),
+                gdt.addColorStop(0.7,'pink'),
+                gdt.addColorStop(1,'yellow'); 
+                return gdt;//返回球颜色                
+            },     
+            createball:function (){//画球              
+                api.beginPath();
+                api.clearRect(this.x-this.speedx-this.r,this.y-this.speedy-this.r,this.r*2,this.r*2);
+                api.arc(this.x,this.y,this.r,0,360);
+                //api.stroke();
+                api.fillStyle=this.color;                              
+                api.fill();//填充球
+            },
+            
+            move:function (){
+                setInterval(function (){                    
+                    this.color=this.createColor();
+                    if(this.x+this.r>=600 || this.x-this.r<=0){
+                        this.speedx*=-1;
+                    }
+                    if(this.y+this.r>=600 || this.y-this.r<=0){
+                        this.speedy*=-1;
+                    }
+                    this.x+=this.speedx;
+                    this.y+=this.speedy;
+
+                    this.createball();
+                }.bind(this),17)
+            }
+            
+        }
+        //随机生成多个球
+        for(var i=0;i<10;i++){
+            new Ball(100,100,random(5,20),random(1,10),random(1,10));
+        }
+    
+    </script>
+</body>
+</html>
