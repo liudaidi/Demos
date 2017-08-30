@@ -1,0 +1,703 @@
+body {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  top: 0; }
+
+.wraper {
+  width: 100%;
+  height: 100%;
+  background: url(../imgs/109@2x.png) no-repeat;
+  background-size: cover; }
+
+.swiper-container, .swiper-wrapper, .swiper-slide {
+  width: 100%;
+  height: 100%; }
+
+.page1, .page2 {
+  display: -webkit-box;
+  -webkit-box-align: center;
+  -webkit-box-pack: center; }
+
+.phone {
+  width: 90%;
+  position: relative; }
+  .phone img {
+    display: block;
+    width: 100%; }
+  .phone .logo {
+    position: absolute;
+    width: 26%;
+    left: 37%;
+    top: 15%; }
+
+.phones {
+  margin-top: -13%; }
+
+.content {
+  position: absolute;
+  bottom: 20%;
+  width: 80%;
+  left: 11%;
+  margin: 0 auto; }
+
+.content-date {
+  width: 60%;
+  position: relative;
+  margin-left: 17%;
+  margin-bottom: 7%;
+  animation-delay: 0.6s; }
+  .content-date .date {
+    display: block;
+    width: 100%; }
+  .content-date .day {
+    position: absolute;
+    top: 15%;
+    left: 10%;
+    width: 70%; }
+  .content-date .arrow {
+    width: 10%;
+    position: absolute;
+    bottom: -5%;
+    left: 22%; }
+
+.content-btn {
+  width: 60%;
+  position: relative;
+  margin-left: 17%; }
+  .content-btn .btn {
+    display: block;
+    width: 100%; }
+  .content-btn .new {
+    width: 70%;
+    position: absolute;
+    top: 22%;
+    left: 15%; }
+
+.bot {
+  width: 100%;
+  animation-delay: 1.3s; }
+  .bot .goon {
+    width: 26%;
+    position: fixed;
+    left: 37%;
+    bottom: 1.5%;
+    animation-iteration-count: infinite; }
+
+.person2, .date2, .question, .straight-line img, .curve img, .arrow2 img, .pinyin img, .yinbiao1 img, .yinbiao2 img,
+.case img, .case-line img, .case-line2 img, .finger, .pass3, .blackboard2, .phone2, .face2, .finger2,
+.voice, .line-one, .line-two, .line-three, .save2 img, .onion, .make-bots .goons, .six-new img, .six-date img,
+.six-day img, .six-img3 img, .six-img4 img, .six-img5 img, .six-img6 img, .six-img2, .six-img7, .six-img8,
+.jt-img1, .jt-img2, .jt-img3, .five-track, .five-but img, .five-complete img, .five-img1 img, .five-img2 img, .five-img3 img,
+.five-img4 img, .five-img5 img, .five-img6 img, .five-air {
+  display: block;
+  position: absolute; }
+
+.help {
+  width: 90%;
+  height: 90%;
+  position: relative; }
+  .help .problem {
+    position: absolute;
+    left: 10%;
+    width: 80%; }
+    .help .problem .person {
+      display: block;
+      position: relative;
+      width: 100%;
+      margin-top: 6%; }
+    .help .problem .date2 {
+      width: 80%;
+      left: -6%;
+      top: -6%; }
+      .help .problem .date2 img {
+        width: 100%; }
+    .help .problem .day2 {
+      position: absolute;
+      left: 5%;
+      top: 10%; }
+      .help .problem .day2 img {
+        display: block;
+        width: 60%; }
+    .help .problem .person2 {
+      width: 80%;
+      left: 10%;
+      bottom: 38%; }
+    .help .problem .question {
+      width: 30%;
+      right: 5%;
+      bottom: 11%; }
+    .help .problem .straight-line {
+      animation-delay: 0.3s; }
+      .help .problem .straight-line img {
+        width: 15%;
+        bottom: 7%;
+        right: 20%; }
+    .help .problem .curve {
+      animation-delay: 0.6s; }
+      .help .problem .curve img {
+        width: 5%;
+        right: 28%;
+        bottom: -15%; }
+    .help .problem .arrow2 {
+      animation-delay: 0.8s; }
+      .help .problem .arrow2 img {
+        width: 5%;
+        right: 28%;
+        bottom: -16%; }
+  .help .dan {
+    width: 100%;
+    position: absolute;
+    top: 30%; }
+    .help .dan .user {
+      animation-delay: 0.8s; }
+      .help .dan .user img {
+        display: block;
+        width: 50%;
+        margin-left: 10%;
+        margin-top: 5%; }
+    .help .dan .pass {
+      animation-delay: 1s; }
+      .help .dan .pass img {
+        display: block;
+        width: 50%;
+        margin-left: 35%;
+        margin-top: 5%; }
+    .help .dan .forget {
+      animation-delay: 1.5s; }
+      .help .dan .forget img {
+        display: block;
+        width: 60%;
+        margin-left: 20%;
+        margin-top: 5%; }
+    .help .dan .pass2 {
+      animation-delay: 1.8s; }
+      .help .dan .pass2 img {
+        display: block;
+        width: 35%;
+        margin-left: 5%;
+        margin-top: 5%; }
+    .help .dan .save {
+      animation-delay: 1.8s; }
+      .help .dan .save img {
+        display: block;
+        width: 50%;
+        margin-left: 40%;
+        margin-top: -3%; }
+    .help .dan .user2 {
+      animation-delay: 2.5s; }
+      .help .dan .user2 img {
+        display: block;
+        width: 55%;
+        margin-left: 25%;
+        margin-top: 5%; }
+
+.bot2 {
+  animation-delay: 3.3s;
+  position: absolute;
+  width: 26%;
+  bottom: -3%;
+  left: 37%; }
+  .bot2 .goons {
+    width: 100%;
+    animation-iteration-count: infinite; }
+
+.swiper-slide .animated {
+  display: none; }
+
+.swiper-slide-active .animated {
+  display: block; }
+
+.make {
+  width: 90%;
+  height: 90%;
+  position: relative; }
+
+.make-top {
+  width: 100%;
+  position: relative; }
+  .make-top .make-onion img {
+    display: block;
+    width: 88%;
+    margin-left: 6%;
+    margin-top: 6%;
+    padding-top: 6%; }
+  .make-top .pinyin {
+    animation-delay: 0.7s; }
+    .make-top .pinyin img {
+      width: 30%;
+      top: -50%;
+      left: 28%; }
+  .make-top .yinbiao1 {
+    animation-delay: 0.8s; }
+    .make-top .yinbiao1 img {
+      width: 2%;
+      left: 38%;
+      top: -82%; }
+  .make-top .yinbiao2 {
+    animation-delay: 0.8s; }
+    .make-top .yinbiao2 img {
+      width: 2%;
+      left: 52%;
+      top: -82%; }
+  .make-top .case {
+    animation-delay: 1s;
+    margin-top: 7%; }
+    .make-top .case img {
+      width: 60%;
+      left: 15%;
+      bottom: 0; }
+  .make-top .case-line {
+    animation-delay: 1.5s; }
+    .make-top .case-line img {
+      width: 70%;
+      left: 15%;
+      bottom: -52%; }
+  .make-top .case-line2 {
+    animation-delay: 1.5s; }
+    .make-top .case-line2 img {
+      width: 70%;
+      left: 15%;
+      bottom: -58%; }
+
+.make-center {
+  width: 100%;
+  margin-top: 25%;
+  animation-delay: 2s;
+  position: relative; }
+  .make-center .face {
+    display: block;
+    width: 100%; }
+  .make-center .finger {
+    width: 90%;
+    left: 5%;
+    top: 30%; }
+  .make-center .pass3 {
+    width: 60%;
+    left: 20%;
+    bottom: 20%; }
+
+.make-bot {
+  width: 100%;
+  margin-top: 15%;
+  animation-delay: 2s;
+  position: relative; }
+  .make-bot .blackboard {
+    display: block;
+    width: 80%;
+    margin-left: 10%; }
+  .make-bot .blackboard2 {
+    width: 80%;
+    left: 8%;
+    top: -5%; }
+  .make-bot .phone2 {
+    width: 34%;
+    right: 8%;
+    top: -10%; }
+  .make-bot .face2 {
+    width: 30%;
+    left: 15%;
+    top: 8%; }
+  .make-bot .finger2 {
+    width: 30%;
+    left: 15%;
+    top: 32%; }
+  .make-bot .voice {
+    width: 30%;
+    left: 15%;
+    top: 58%; }
+  .make-bot .line-one {
+    width: 30%;
+    right: 23%;
+    top: -6%; }
+  .make-bot .line-two {
+    width: 24%;
+    right: 30%;
+    top: 37%; }
+  .make-bot .line-three {
+    width: 20%;
+    right: 33%;
+    top: 56%; }
+  .make-bot .save2 {
+    animation-delay: 2.5s; }
+    .make-bot .save2 img {
+      width: 30%;
+      right: 17%;
+      bottom: 15%; }
+  .make-bot .onion {
+    width: 12%;
+    right: 18%;
+    top: 10%; }
+
+.make-bots {
+  width: 100%;
+  animation-delay: 3s; }
+  .make-bots .goons {
+    width: 26%;
+    bottom: -3%;
+    left: 37%;
+    animation-delay: 1s;
+    animation-iteration-count: infinite; }
+
+.select {
+  width: 90%;
+  height: 90%;
+  position: relative; }
+
+.select-center {
+  width: 100%;
+  position: relative;
+  margin-top: 15%;
+  animation-delay: 2s; }
+  .select-center .four-blackboard {
+    display: block;
+    width: 100%; }
+  .select-center .four-blackboardT {
+    display: block;
+    width: 100%;
+    position: absolute;
+    top: -1%;
+    left: 2%; }
+  .select-center .four-blackboardB {
+    display: block;
+    width: 100%;
+    position: absolute;
+    left: 2%;
+    bottom: 0%; }
+  .select-center .four-img1, .select-center .four-img2, .select-center .four-img3, .select-center .four-img4, .select-center .four-img5,
+  .select-center .four-img6, .select-center .four-img7, .select-center .four-img8, .select-center .four-img9, .select-center .four-img10,
+  .select-center .four-img11, .select-center .four-img12, .select-center .four-img13, .select-center .four-img14, .select-center .four-img15,
+  .select-center .four-img16, .select-center .four-img17, .select-center .four-img18, .select-center .four-img19, .select-center .four-img20, .select-center .four-img21 {
+    display: block;
+    width: 25%;
+    position: absolute; }
+    .select-center .four-img1 img, .select-center .four-img2 img, .select-center .four-img3 img, .select-center .four-img4 img, .select-center .four-img5 img,
+    .select-center .four-img6 img, .select-center .four-img7 img, .select-center .four-img8 img, .select-center .four-img9 img, .select-center .four-img10 img,
+    .select-center .four-img11 img, .select-center .four-img12 img, .select-center .four-img13 img, .select-center .four-img14 img, .select-center .four-img15 img,
+    .select-center .four-img16 img, .select-center .four-img17 img, .select-center .four-img18 img, .select-center .four-img19 img, .select-center .four-img20 img, .select-center .four-img21 img {
+      width: 100%; }
+  .select-center .four-img1 {
+    animation-delay: 2.3s;
+    top: 10%;
+    left: 6%; }
+  .select-center .four-img2 {
+    animation-delay: 2.5s;
+    top: 10%;
+    left: 35%; }
+  .select-center .four-img3 {
+    animation-delay: 2.7s;
+    top: 7%;
+    left: 66%; }
+  .select-center .four-img4 {
+    animation-delay: 2.6s;
+    top: 23%;
+    left: 6%; }
+  .select-center .four-img5 {
+    animation-delay: 2.5s;
+    top: 23%;
+    left: 35%; }
+  .select-center .four-img6 {
+    animation-delay: 2.3s;
+    top: 23%;
+    left: 66%; }
+  .select-center .four-img7 {
+    animation-delay: 2.5s;
+    top: 33%;
+    left: 6%; }
+  .select-center .four-img8 {
+    animation-delay: 2.7s;
+    top: 33%;
+    left: 35%; }
+  .select-center .four-img9 {
+    animation-delay: 0.3s;
+    top: 34%;
+    left: 66%; }
+  .select-center .four-img10 {
+    animation-delay: 2.5s;
+    top: 46%;
+    left: 6%; }
+  .select-center .four-img11 {
+    animation-delay: 2.6s;
+    top: 45%;
+    left: 35%; }
+  .select-center .four-img12 {
+    animation-delay: 2.4s;
+    top: 46%;
+    left: 66%; }
+  .select-center .four-img13 {
+    animation-delay: 2.5s;
+    top: 56%;
+    left: 6%; }
+  .select-center .four-img14 {
+    animation-delay: 2.7s;
+    top: 56%;
+    left: 35%; }
+  .select-center .four-img15 {
+    animation-delay: 2.4s;
+    top: 56%;
+    left: 66%; }
+  .select-center .four-img16 {
+    animation-delay: 2.6s;
+    top: 68%;
+    left: 6%; }
+  .select-center .four-img17 {
+    animation-delay: 2.7s;
+    top: 71%;
+    left: 35%; }
+  .select-center .four-img18 {
+    animation-delay: 2.5s;
+    top: 69%;
+    left: 66%; }
+  .select-center .four-img19 {
+    animation-delay: 2.8s;
+    top: 80%;
+    left: 6%; }
+  .select-center .four-img20 {
+    animation-delay: 2.8s;
+    top: 79%;
+    left: 35%; }
+  .select-center .four-img21 {
+    animation-delay: 2.7s;
+    top: 79%;
+    left: 66%; }
+
+.six-product {
+  width: 90%;
+  height: 85%;
+  padding-top: 5%;
+  z-index: auto;
+  display: flex;
+  -webkit-flex-direction: column; }
+
+.six-top {
+  width: 100%;
+  height: 30%;
+  position: relative; }
+  .six-top .six-new img {
+    width: 60%;
+    left: 21%;
+    top: 10%; }
+  .six-top .six-date {
+    animation-delay: 0.3s; }
+    .six-top .six-date img {
+      width: 40%;
+      left: 30%;
+      top: 40%; }
+  .six-top .six-day {
+    animation-delay: 0.5s; }
+    .six-top .six-day img {
+      width: 30%;
+      left: 35%;
+      top: 48%; }
+
+.six-bot {
+  flex: 1; }
+  .six-bot .six-big {
+    width: 70%;
+    margin-left: 16%;
+    margin-top: 15%;
+    position: relative;
+    animation-delay: 1s; }
+  .six-bot .six-img1 {
+    width: 100%; }
+  .six-bot .six-img3 {
+    animation-delay: 1.5s; }
+    .six-bot .six-img3 img {
+      width: 100%;
+      bottom: -33%;
+      left: 0; }
+  .six-bot .six-img4 {
+    animation-delay: 1.5s; }
+    .six-bot .six-img4 img {
+      width: 80%;
+      left: 10%;
+      bottom: -32%; }
+  .six-bot .six-img5 {
+    animation-delay: 1.8s; }
+    .six-bot .six-img5 img {
+      width: 90%;
+      left: 5%;
+      bottom: -55%; }
+  .six-bot .six-img6 {
+    animation-delay: 1.8s; }
+    .six-bot .six-img6 img {
+      width: 80%;
+      left: 10%;
+      bottom: -52%; }
+
+.six-img7 {
+  width: 20%;
+  left: 40%;
+  bottom: 3%; }
+
+.six-img2 {
+  animation-delay: 1.3s;
+  width: 70%;
+  top: -35%;
+  left: 0; }
+  .six-img2 img {
+    width: 100%; }
+
+.six-img8 {
+  animation-delay: 1.3s;
+  width: 50%;
+  top: -14%;
+  right: -10%; }
+  .six-img8 img {
+    width: 100%; }
+
+.jt-img1 {
+  width: 20%;
+  top: -25%;
+  left: 35%;
+  animation-delay: 1.3s; }
+  .jt-img1 img {
+    width: 100%; }
+
+.jt-img2 {
+  width: 2%;
+  top: -19%;
+  left: 44%;
+  animation-delay: 1.3s; }
+  .jt-img2 img {
+    width: 100%; }
+
+.jt-img3 {
+  width: 5%;
+  top: -13%;
+  left: 43%;
+  animation-delay: 1.3s; }
+  .jt-img3 img {
+    width: 100%; }
+
+.airplane {
+  width: 100%;
+  height: 85%; }
+  .airplane .five-road {
+    width: 90%;
+    height: 100%;
+    margin-left: 5%;
+    position: relative; }
+    .airplane .five-road .bot2 {
+      bottom: -6%; }
+    .airplane .five-road .five-track {
+      width: 100%;
+      margin-top: 11%;
+      left: 2%;
+      top: 0; }
+    .airplane .five-road .five-but {
+      animation-delay: 0.5s; }
+      .airplane .five-road .five-but img {
+        width: 30%;
+        left: 2%;
+        top: 0; }
+    .airplane .five-road .five-complete {
+      animation-delay: 0.5s; }
+      .airplane .five-road .five-complete img {
+        width: 85%;
+        top: 10%;
+        left: 5%; }
+    .airplane .five-road .five-img1 {
+      animation-delay: 1s; }
+      .airplane .five-road .five-img1 img {
+        width: 73%;
+        top: 18%;
+        left: 26%; }
+    .airplane .five-road .five-img2 {
+      animation-delay: 1s; }
+      .airplane .five-road .five-img2 img {
+        width: 64%;
+        top: 20%;
+        left: 30%; }
+    .airplane .five-road .five-img3 {
+      animation-delay: 1.5s; }
+      .airplane .five-road .five-img3 img {
+        width: 27%;
+        top: 25%;
+        left: 40%; }
+    .airplane .five-road .five-img4 {
+      animation-delay: 1s; }
+      .airplane .five-road .five-img4 img {
+        width: 30%;
+        left: 10%;
+        top: 47%; }
+    .airplane .five-road .five-img5 {
+      animation-delay: 1s; }
+      .airplane .five-road .five-img5 img {
+        width: 73%;
+        top: 58%;
+        right: 10%; }
+    .airplane .five-road .five-img6 {
+      animation-delay: 1s; }
+      .airplane .five-road .five-img6 img {
+        width: 65%;
+        top: 64%;
+        right: 14%; }
+    .airplane .five-road .five-air {
+      width: 42%;
+      top: 0;
+      left: 25%;
+      animation: fly 5s linear forwards; }
+
+@keyframes fly {
+  0% {
+    transform: translate(0, 0) rotate(0deg); }
+  10% {
+    transform: translate(90%, 0) rotate(40deg); }
+  15% {
+    transform: translate(120%, 80%) rotate(40deg); }
+  20% {
+    transform: translate(130%, 160%) rotate(40deg); }
+  24% {
+    transform: translate(130%, 180%) rotate(40deg); }
+  28% {
+    transform: translate(130%, 180%) rotate(190deg); }
+  32% {
+    transform: translate(130%, 200%) rotate(200deg); }
+  37% {
+    transform: translate(110%, 200%) rotate(200deg); }
+  42% {
+    transform: translate(100%, 190%) rotate(200deg); }
+  47% {
+    transform: translate(50%, 210%) rotate(190deg); }
+  52% {
+    transform: translate(30%, 200%) rotate(170deg); }
+  57% {
+    transform: translate(15%, 250%) rotate(200deg); }
+  59% {
+    transform: translate(11%, 290%) rotate(220deg); }
+  61% {
+    transform: translate(-15%, 270%) rotate(220deg); }
+  65% {
+    transform: translate(-30%, 245%) rotate(200deg); }
+  68% {
+    transform: translate(-40%, 210%) rotate(180deg); }
+  70% {
+    transform: translate(-75%, 230%) rotate(150deg); }
+  73% {
+    transform: translate(-90%, 330%) rotate(130deg); }
+  75% {
+    transform: translate(-110%, 350%) rotate(100deg); }
+  78% {
+    transform: translate(-110%, 380%) rotate(80deg); }
+  80% {
+    transform: translate(-110%, 400%) rotate(60deg); }
+  80% {
+    transform: translate(-95%, 480%) rotate(20deg); }
+  84% {
+    transform: translate(-45%, 490%) rotate(-10deg); }
+  87% {
+    transform: translate(-40%, 495%) rotate(-15deg); }
+  89% {
+    transform: translate(-40%, 475%) rotate(0deg); }
+  90% {
+    transform: translate(0%, 360%) rotate(70deg); }
+  97% {
+    transform: translate(0%, 450%) rotate(360deg); }
+  99% {
+    transform: translate(65%, 360%); }
+  100% {
+    transform: translate(65%, 360%); } }
+
+/*# sourceMappingURL=style.css.map */
