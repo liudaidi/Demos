@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        .box{
+            position: absolute;
+            left: 50%;
+            top:50%;
+            margin-top: -300px;
+            margin-left: -300px;
+            border:3px solid #ccc;
+        }
+    </style>
+</head>
+<body>
+    <canvas class='box' width='600' height='600'></canvas>
+    <script>
+    var box=document.querySelector('.box');
+    var api=box.getContext('2d');
+    var deg=Math.PI/180;
+  
+        api.translate(300,300); //移动坐标
+        function render(){
+            api.clearRect(-600,-600,1000,1000);
+
+            api.rotate(1*deg);
+            api.beginPath();           
+            api.rect(-50,-50,100,100);
+            api.stroke();
+            api.fillStyle='pink';
+            api.fill();
+            api.lineWidth='5'
+            requestAnimationFrame(render);
+        }
+        requestAnimationFrame(render);
+    </script>
+</body>
+</html>

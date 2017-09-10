@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+
+    <script src='js/jquery-3.2.1.min.js'></script>
+    <script src='js/echarts.min.js'></script>
+
+    <style>
+        *{
+            margin: 0;padding: 0;
+
+        }
+        body,html{
+            width: 100%;
+            height: 100%;
+        }
+        .box{
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+    
+</head>
+<body>
+    <div class="box"></div> 
+    <script>
+    var box=document.querySelector('.box');
+    var circle=echarts.init(box);
+    //饼图
+    var options={
+        legend: {
+                    orient: 'vertical',
+                    left: 'left',
+                    data: ['直接访问','邮件营销','联盟广告','视频广告','搜索引擎','视频广高','dsfdsfdf']
+                },
+        series:[
+                {                
+                type:'pie',
+                data:[
+                        {value:335,name:'直接访问'},
+                        {value:375,name:'邮件营销'},
+                        {value:274,name:"联盟广告"},
+                        {value:400,name:'视频广高'},
+                        {value:300,name:'dsfdsfdf'}
+                ] 
+            }             
+        ]
+
+    }
+    //柱状图
+    /*var options={
+        grid:{
+            left:'3%',
+            right:'4%',
+            bottom:'3%',
+            containLabel:true
+        },
+        xAxis: {
+                type:'category',
+                data: ['直接访问','邮件营销','联盟广告','视频广告','搜索引擎','视频广高','dsfdsfdf']
+                
+            },
+        yAxis: {type:'value'},
+        series:[
+            {               
+                type:'bar',
+                data:[
+                    {value:334},
+                    {value:310},
+                    {value:130},
+                    {value:1000},
+                    {value:600},
+                    {value:800},
+                    {value:165.5}
+                ]
+            }
+        ]
+    }*/
+    circle.setOption(options);
+
+    </script>
+</body>
+</html>

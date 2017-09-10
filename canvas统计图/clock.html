@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        .time{
+            border:8px solid #ccc;
+            position: absolute;
+            left:50%;
+            top:50%;
+            margin-left:-300px;
+            margin-top: -300px;
+        }
+    .img{
+        display: none;
+      }
+    </style>
+</head>
+<body>
+    <canvas class='time' width='500' height='500'></canvas>
+    <img class="img" src="img/images/hour.png" alt="" class='hour'>
+    <img class="img" src="img/images/minute.png" alt="" class='minute'>
+    <img class="img" src="img/images/second.png" alt="" class='second'>
+    <script>
+    //时钟
+    var time=document.querySelector('.time');
+    var hour_img=document.querySelector('.hour');
+    var minute_img=document.querySelector('.minute');
+    var second_img=document.querySelector('.second');
+    var img=document.querySelectorAll(".img")
+    var api=time.getContext('2d');
+    var pic=new Image();
+    var deg=Math.PI/180;
+        api.translate(250,250);
+        //制作表盘
+        function  draowdial(){
+            api.clearRect(-250,-250,500,500);
+            api.beginPath();
+            api.arc(0,0,200,0,360);  //绘制原行arc(x,y,r,start,end)
+            api.stroke();
+            //制作刻度
+            for(var i=1;i<=60;i++){
+                if(i%15==0){
+                  //保存坐标
+                  api.save();
+                  api.beginPath();
+                  api.rotate(i*6*deg);
+                  api.moveTo(0,-200),
+                  api.lineTo(0,-160);                                               
+                  api.lineWidth=6;
+                  api.strokeStyle='orange';   
+                  api.stroke();                
+                  //恢复坐标
+                  api.restore();
+                }else if(i%5==0){
+                      api.beginPath();
+                      api.save();
+                      api.rotate(i*6*deg);
+                      api.moveTo(0,-200),
+                      api.lineTo(0,-175);                
+                      api.strokeStyle='#000';                
+                      api.lineWidth=3;
+                      api.stroke();
+                      //恢复坐标
+                      api.restore();
+                }else{
+                      api.beginPath();
+                      api.save();
+                      api.rotate(i*6*deg);
+                      api.moveTo(0,-200),
+                      api.lineTo(0,-190);                
+                      api.strokeStyle='#000';                
+                      api.lineWidth=2;
+                      api.stroke();
+                      //恢复坐标
+                      api.restore();
+                }
+        }          
+        //中心点
+        api.beginPath();
+        api.arc(0,0,16,0,360*deg);
+        api.fill();       
+        //渲染数字
+        api.font='24px Arial';
+        api.textAlign='center';
+        api.textBaseLine='middle';
+        for(var j=1;j<=12;j++){
+          api.fillText(j<=9?j+3:j-9,160*Math.cos(j*30*deg),160*Math.sin(j*30*deg))
+        }
+    }  
+      //绘制指针
+      function scale(){                       
+          var date=new Date();
+          var hour=date.getHours();
+          var minute=date.getMinutes();
+          var second=date.getSeconds();
+          //设置时针,
+          api.save();          
+          api.rotate((hour+minute/60+second/3600)*30*deg);
+          api.beginPath();        
+          api.drawImage(img[1],-9,-130,20,120);
+          /*api.moveTo(0,40);
+          api.lineTo(0,-160);
+          api.strokeStyle='#000';*/
+          api.lineWidth=5;
+          api.stroke();
+          api.restore(); 
+         
+          //设置分针，
+          api.save();      
+          api.rotate((minute+second/60)*6*deg);
+          api.beginPath();      
+          api.drawImage(img[0],9,-160,-15,200);
+          /*api.moveTo(0,20);
+          api.lineTo(0,-180);
+          api.strokeStyle='#999'*/
+          api.stroke();
+          api.lineWidth=3;
+          api.restore();  
+
+          //设置秒针，
+          api.save();         
+          api.rotate(second*6*deg);
+          api.beginPath();         
+          api.drawImage(img[2],-9,-30,20,150);
+          /*api.moveTo(0,30);
+          api.lineTo(0,-190);
+          api.strokeStyle='red'; */ 
+          api.stroke();       
+          api.restore(); 
+        
+      }
+        draowdial();
+        scale();
+
+        setInterval(function (){
+            draowdial();
+            scale();
+        },1000)
+        
+    </script>
+</body>
+</html>

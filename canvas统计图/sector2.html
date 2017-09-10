@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<canvas class="box" width="800" height="500"></canvas>
+	<script>
+		var arr = [
+			{
+			num: 40,
+			color: 'pink'
+			}, {
+				num: 50,
+				color: 'blue'
+			}, {
+				num: 110,
+				color: 'orange'
+			}, {
+				num: 60,
+				color: 'green'
+			}, {
+				num: 90,
+				color: 'purple'
+			}
+		];
+		var sum=0;
+		arr.forEach(function(value){
+			sum+=value.num	
+		})
+
+		var box = document.querySelector('.box');
+		var api = box.getContext('2d');
+		var deg = Math.PI/180;
+
+		var prev=0;
+		//requestAnimationFrame
+		async function a(){
+			for(let i of arr){
+				await new Promise(function(resolve,reject){
+					var end = prev+i.num/sum*360;
+					draw(i.color,prev,end,function(){
+						resolve(end)				
+					});		
+				}).then(function(data){
+					prev=data
+				})
+			}	
+		}
+		a()	
+
+		function draw(color,start,end,callback){
+			var index=0;
+			function sector(){
+				index++;
+
+				api.beginPath();
+				api.moveTo(400,250);
+				api.arc(400,250,150,start*deg,(start+index)*deg);
+				api.fillStyle = color;
+				api.fill();	
+
+
+				if(index<=(end-start)){
+					requestAnimationFrame(sector)
+				}else{
+					callback()
+				}
+			}
+			requestAnimationFrame(sector);
+			return end;
+		}		
+	
+	</script>
+</body>
+</html>

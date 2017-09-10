@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        .box{
+            border: 1px solid #ccc;
+        }
+    </style>
+</head>
+<body>
+    
+    <canvas class='box' width='1500' height='500'></canvas>
+    <script>
+   
+    var box=document.querySelector('.box');
+    var data=[
+        {
+            num:60,
+            col:'red'
+        },
+        {
+            num:90,
+            col:'yellow'
+        },
+        {
+            num:110,
+            col:'blue'
+        },
+        {
+            num:50,
+            col:'pink'
+        },{
+            num:30,
+            col:'orange'
+        }
+    ]
+    var api=box.getContext('2d');
+    var deg=Math.PI/180;
+       function Pei(angle,col,prevangle){
+            api.beginPath();
+            api.moveTo(500,300);
+            api.arc(500,300,100,prevangle*deg,angle*deg+prevangle*deg);
+            api.closePath();          
+            api.fillStyle=col;
+            api.fill();
+            return angle;
+            console.log(angle)
+       }
+       var sum=340,
+            temp=0;
+       data.forEach((val,ind)=>{      
+            temp+=Pei(val.num/sum*360,val.col,temp);
+
+       })
+    </script>
+</body>
+</html>

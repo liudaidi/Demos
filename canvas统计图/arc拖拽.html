@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+        <style>
+            .can{
+                border: 5px solid #999;
+            }
+            .col{
+                position: absolute;
+                left: 62%;
+                top:10px;
+            }
+        </style>
+</head>
+<body>
+    <canvas class='can' width='800' height='600'></canvas>
+    <input type="color" class='col'>
+    <script>
+    var can=document.querySelector('.can');
+    var pionter=can.getContext('2d');
+        var left=can.offsetLeft;//盒子的偏移
+        var otop=can.offsetTop;
+    var col=document.querySelector('.col').onchange=function (){
+        var colvalue=this.value;
+       
+        var flag=false;
+        can.addEventListener('mousedown',function (e){           
+            flag=true;      
+            draw(e.pageX-left-5,e.pageY-otop-5,colvalue)        
+        })
+        can.addEventListener('mousemove',function (e){
+            if(!flag) return;
+            draw(e.pageX-left-5,e.pageY-otop-5,colvalue);
+        })
+
+        can.addEventListener('mouseup',function (e){
+            flag=false;
+        })
+        //画圆
+        function draw(x,y,color){
+            pionter.beginPath();
+            pionter.clearRect(0,0,800,600);
+            pionter.moveTo(x,y);
+            pionter.arc(x,y,50,0,Math.PI*2);
+            pionter.fillStyle=color;
+            pionter.fill();
+        }
+
+
+    };
+    
+   
+    </script>
+</body>
+</html>

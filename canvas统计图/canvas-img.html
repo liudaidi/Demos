@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <style>
+        #myCanvas{
+           border:1px solid #d3d3d3;
+           background:#ffffff;
+        }
+    </style>
+</head>
+<body>
+    <p>要使用的图像：</p>
+    <img id="tulip" src="img/3.jpg" alt="The Tulip" />
+    
+    <p><button id='btn'>画布</button></p>
+    <canvas id="myCanvas" width="500" height="300" >
+    Your browser does not support the HTML5 canvas tag.
+    </canvas>
+<script>
+    var btn=document.querySelector('#btn');
+    btn.onclick=function (){
+        var c=document.getElementById("myCanvas");
+        var ctx=c.getContext("2d");
+        var img=document.getElementById("tulip");
+        ctx.drawImage(img,10,10);
+    }
+    //1.在画布上定位图像：  
+    //          context.drawImage(img,x,y);
+    //2.在画布上定位图像，并规定图像的宽度和高度：
+    //          context.drawImage(img,x,y,width,height)        
+    //3.剪切图像，并在画布上定位被剪切的部分：
+    //          context.drawImage(img,sx,sy,swidth,sheight,x,y,width,height); 
+
+    
+    
+</script>
+
+</body>
+</html>
