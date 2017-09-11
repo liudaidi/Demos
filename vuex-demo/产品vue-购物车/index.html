@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/style.css">
+<style>
+	
+	 .v-enter,.v-leave-to{
+    opacity: 0;
+}
+.v-enter-to,.v-leave{
+    opacity: 1;
+}
+.v-enter-active,.v-leave-active{
+    transition: opacity 2s ease;
+}
+.tip{
+    position: fixed;
+    background: #000;
+    color: #fff;
+    bottom: 30px;
+    width: 80%;
+    left: 10%;
+    line-height: 40px;
+    border-radius: 5px;
+    text-align: center;
+    font-size: 1.4rem;
+}
+</style>
+</head>
+<body>
+    <div class="wrapper">
+        <orderheader v-bind:title='title'></orderheader>
+        <section>
+            <div-address 
+                        :person_name='person_name' 
+                        :person_num='person_num' 
+                        :person_address='person_address'>
+            </div-address>
+            <div-good1 v-for='(x,index) in goods_list'
+                        :shop_name='x.shop'
+                        :product_name='x.product'
+                        :price='x.price'
+                        :discount_price='x.discount_price'
+                        :total_price='x.total_price'
+                        :freight_price='x.freight_price'
+                        :all_price='x.all_price'
+                        :count_limit='x.count_limit'
+                        :key='index'
+                        >
+                        
+            </div-good1>
+            
+            
+            
+            <div-shoping :pay_ways='pay_ways'>
+            	<li>
+		            <span>余额支付：￥<b>{{reserved_money}}</b></span>
+		            <p>
+		                <label class="checkBtn">
+		                    <input type="checkbox" v-model="reserved_money_input" id="name1" >
+		                    <span class="track">
+		                        <b class="icon"></b>
+		                    </span>
+		                </label>
+		            </p>
+        		</li>
+        		<li>
+		            <span>奖金支付：￥<b>{{reserved_money}}</b></span>
+		            <p>
+		                <label class="checkBtn">
+		                    <input type="checkbox" v-model="awards_money_input" id="name2">
+		                    <span class="track">
+		                        <b class="icon"></b>
+		                    </span>
+		                </label>
+		            </p>
+        		</li>
+            	<li>
+            		<div><span>其他支付方式</span>
+	            		<p><i class='fa fa-fw fa-angle-right'></i></p>	            		
+	            	</div>  
+            	</li>
+            </div-shoping>  
+              
+        </section>
+        
+        
+        <div-footer :plug_condition='plug_condition' :init_price="init_price" :query_data="query_data"></div-footer>
+        
+        
+    </div>   
+    <script type='text/x-template' id='good1'>
+        <div class="good1">
+            <h2><i class='fa fa-fw fa-home'></i>{{shop_name}}</h2>
+            <dl>
+                <dt><img src="images/1_03.png" alt=""></dt>
+                <dd>
+                    <p>{{product_name}}</p>
+                    <div class='content'>
+                        <p>
+                            <span class='red'>￥<b>{{discount_price}}</b></span>
+                            <span class='hui'>￥<b>{{price}}</b></span>
+                        </p>
+                        <ul>
+                            <li class='del' v-on:click='del'>-</li>
+                            <li class='num'>{{count}}</li>
+                            <li class='add' v-on:click='add'>+</li>
+                        </ul>
+                    </div>
+              </dd>
+            </dl>
+            <div class="goods-info">
+                <p>商品总金额：<span>￥<b>{{sum_price}}</b></span></p>
+                <p>运费：<span>￥<b>{{freight_price}}</b></span></p>
+                <p>总额（含运费）：<span class='red'>￥<b>{{all_price}}</b></span></p>
+            </div>      
+        </div>
+    </script>
+    <script src='js/mock.js'></script>
+    <script src='js/vue.js'></script>  
+    <script src="js/axios.js"></script>
+     <script src='components/header.js'></script>
+    <script src='components/footer.js'></script>
+    <script src='components/address.js'></script>
+    <script src='components/good1.js'></script>
+    <script src='components/pay.js'></script>
+    <script src='components/bgcolor.js'></script>
+    <script src='components/app.js'></script>   
+
+</body>
+</html>

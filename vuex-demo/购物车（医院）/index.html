@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="wrapper">
+       <my-header></my-header>
+        <section>
+            <sec_hospital v-for='x in list' :product_list='x.product_list' :hospital_name='x.name'></sec_hospital>
+        </section>
+        <my-footer></my-footer>
+    </div>
+    <script src='js/vue.js'></script>
+    <script src='js/axios.js'></script>
+     <script src='js/vuex.js'></script>
+     <script src='store/store.js'></script>
+    <script src='components/header.js'></script>
+
+    
+    <script src='components/footer.js'></script>
+    <script src='components/product.js'></script>
+    <script src='js/app.js'></script>
+</body>
+</html>

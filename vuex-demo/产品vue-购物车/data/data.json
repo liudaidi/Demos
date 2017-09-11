@@ -1,0 +1,31 @@
+{
+    "msg":"sucess",
+    "init_price":428,
+    "pay_ways":{
+	    "reserved":100,
+	    "awards":50
+    },
+    "res":[{
+        "shop":"恒之染旗舰店",
+        "product":"水果大豆棒棒糖维C橙味",
+        "price":"200.00",
+        "discount_price":"180.00",
+        "reserved_count":"10"
+    },
+    {
+        "shop":"天猫旗舰店",
+        "product":"水果大豆棒棒糖维C橙味",
+        "price":"200.00",
+        "discount_price":"180.00",
+        "reserved_count":"10"
+    },
+    {
+        "shop":"淘宝旗舰店",
+        "product":"水果大豆棒棒糖维C橙味",
+        "price":"200.00",
+        "discount_price":"180.00",
+        "reserved_count":"10"
+    }]
+   
+    
+}

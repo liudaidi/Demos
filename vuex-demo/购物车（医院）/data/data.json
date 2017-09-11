@@ -1,0 +1,37 @@
+{
+    "res":"success",
+    "hospital_list":[
+        {
+            "name":"北京佳美口腔医院（三里屯店）",
+            "product_list":[
+                {
+                    "id":"tooth",
+                    "type":"牙齿矫正",
+                    "price":12000
+                },
+                {
+                    "id":"face",
+                    "type":"瘦脸针",
+                    "price":8000
+                }
+
+            ]
+        },
+         {
+            "name":"英煌整形医院（三里屯店）",
+            "product_list":[
+                {
+                    "id":"lip",
+                    "type":"厚唇",
+                    "price":7000
+                },
+                {
+                    "id":"double_eye",
+                    "type":"双眼皮",
+                    "price":5000
+                }
+
+            ]
+        }
+    ]
+}
